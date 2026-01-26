@@ -1,185 +1,48 @@
 <!DOCTYPE html>
     <html>
-    <head>
-        <meta charset="utf-8">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
-    
-    
-    <title>Loan Project</title> 
+       <head>
+            <meta charset="utf-8">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+            <link href="style.css" rel="stylesheet">
+            <title>Loan Project</title>
 
-      <style>
-         /* changes background to purple and centers the box */
-         body {
-            background: #667eea; 
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-          }
-
-        /* white box for the middle (where data will be entered) */
-        .main-box 
-        {
-            background: white;
-            padding: 30px; 
-            width: 350px; 
-            border-radius: 20px; 
-            text-align: center;
-        }
-
-        h1 { color: #4834d4; margin: 0; }
-        p { color: #747d8c; font-size: 13px; }
-
-        /* left-aligns the labels */
-        .row 
-        {
-            text-align: left; 
-            margin-bottom: 10px;
-        }
-
-        label 
-        { 
-            font-size: 12px; 
-            color: #686de0;
-            font-weight: 600;
-            display: block;
-        }
-
-        input 
-        { 
-            width: 100%;
-            padding: 10px; 
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box; 
-        }
-
-        /* background of the risk bar*/
-        .bar-bg 
-        { 
-            background: #f1f2f6;
-            width: 100%; 
-            height: 15px;
-            border-radius: 10px;
-            margin: 20px 0; 
-            overflow: hidden;
-        }
-
-        /* the bar that moves */
-        #bar-fill
-         { 
-            width: 0%; 
-            height: 100%;
-            background: #4834d4;
-            transition: 0.5s; 
-        }
-
-        button 
-        {
-            width: 100%;
-            padding: 12px;
-            background: #4834d4;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        #result-text 
-        { 
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-
-
-<body> 
-    <div class="main-box"> 
-        <h1>Loan Model</h1>
-        <p>Enter your financial details below and see what your loan risk is!</p>
+    </head>
+    <body>
+            <div class="main-box"> 
+                <h1>Loan Model</h1>
+                <p> Enter your financial details below and see what your loan risk is!! </p>
         
-        <div class="row">
-             <label>Yearly Salary ($)</label>
-             <input type="number" id="incomeVal">
-         </div>
+            <div class="row">
+                 <label>Yearly Salary ($)</label>
+                 <input type="number" id="incomeVal">
+             </div>
 
-         <div class="row">
-             <label>Monthly Bills ($)</label>
-             <input type="number" id="expenseVal">
-         </div>
+             <div class="row">
+                <label>Monthly Bills ($)</label>
+                 <input type="number" id="expenseVal">
+             </div>
 
-         <div class="row">
-             <label>Bank Savings ($)</label>
-             <input type="number" id="savingsVal">
-         </div>
+             <div class="row">
+                 <label>Bank Savings ($)</label>
+                 <input type="number" id= "savingsVal">
+             </div>
 
-         <div class="row">
-             <label>Owed Debt ($)</label>
-             <input type="number" id="debtVal">
-         </div>
+             <div class="row">
+                 <label>Owed Debt ($)</label>
+                 <input type="number" id= "debtVal">
+             </div>
  
-         <div class="bar-bg">
-              <div id="bar-fill"></div>
-         </div>
+             <div class="bar-bg">
+                  <div id= "bar-fill"></div>
+             </div>
  
-         <div id="result-text"></div> 
+             <div id= "result-text"></div> 
          
-         <button type="button" onclick="runTheNumbers()">
-                Calculate Risk Level For Me!
-          </button>
-      </div>
+             <button type="button" onclick="runTheNumbers()">
+                    Calculate Risk Level For Me!
+              </button>
+              </div>
 
-
-      <script>
-        function runTheNumbers()
-        {  // gets the numbers
-
-
-            var income = document.getElementById('incomeVal').value;
-            var bills = document.getElementById('expenseVal').value;
-            var bar = document.getElementById('bar-fill');
-            var result = document.getElementById('result-text');
-            // sees how much money is spent (debt to income ratio)
-
-
-            var monthly = income / 12;
-            var ratio = (bills / monthly) * 100;
-            //checks each condition and sees which type of risk it is (low or high?)
-
-            if (ratio < 15) 
-            {
-                result.innerText = "Level 1: Very Low Risk";
-                bar.style.width = "20%";
-                bar.style.backgroundColor = "green";
-            } 
-            else if (ratio < 30) 
-            {
-                result.innerText = "Level 2: Low Risk";
-                bar.style.width = "40%";
-                bar.style.backgroundColor = "blue";
-            } 
-            else if (ratio < 50) 
-            {
-                result.innerText = "Level 3: Medium Risk";
-                bar.style.width = "60%";
-                bar.style.backgroundColor = "yellow";
-            } 
-            else if (ratio < 75) 
-            {
-                result.innerText = "Level 4: High Risk";
-                bar.style.width = "80%";
-                bar.style.backgroundColor = "orange";
-            } 
-            else 
-            {
-                result.innerText = "Level 5: Super High Risk";
-                bar.style.width = "100%";
-                bar.style.backgroundColor = "red";
-            }
-        }
-          </script>
-      </body>
+            <script src="script.js"></script>
+        </body>
 </html>
