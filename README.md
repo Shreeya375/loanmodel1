@@ -1,3 +1,6 @@
+Note: I spoke with Athena reviewers and tech staff about technical issues with Git and commits. All of the code was written in VS Code and then I uploaded to this repository. I ran into Git download and admin issues while setting it up locally, which may help explain the commit history. I’m new to Git and wasn’t aware of these issues. Getting it figured out for the next projects. Thanks for understanding!
+
+
 Loan Model 
 
 This is a website that takes inputs from the user such as the loan amount, total amount of savings, and debt accumulated. It then calculates your risk level from low to high. This program was coded from HTML, CSS, and Java Script. 
