@@ -7,6 +7,11 @@ function runTheNumbers()
             var result = document.getElementById('result-text');
             // sees how much money is spent (debt to income ratio)
 
+           if (income === "" || bills === "")
+           {
+             result.innerText = "Please enter some values!! ";
+             return;
+           }   
 
             if (income === "" || bills === "")
                 {
@@ -16,6 +21,13 @@ function runTheNumbers()
             var monthly = income / 12;
             var ratio = (bills / monthly) * 100;
             //checks each condition and sees which type of risk it is (low or high?)
+
+             income = Number(income); //convert it to numbers
+              bills = Number(bills);         
+
+             //calculateions
+             var monthly = income/12;
+             var ratio = (bills / monthly) * 100;
 
             if (ratio < 15) 
             {
