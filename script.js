@@ -13,21 +13,15 @@ function runTheNumbers()
              return;
            }   
 
-            if (income === "" || bills === "")
-                {
-                    result.innerText = "Please enter some values!! ";
-                    return;
-                }           
+            //converts to numbers
             var monthly = income / 12;
             var ratio = (bills / monthly) * 100;
-            //checks each condition and sees which type of risk it is (low or high?)
+
 
              income = Number(income); //convert it to numbers
-              bills = Number(bills);         
+             bills = Number(bills);         
 
-             //calculateions
-             var monthly = income/12;
-             var ratio = (bills / monthly) * 100;
+            //checks each condition and sees which type of risk it is (low or high?)
 
             if (ratio < 15) 
             {
@@ -60,39 +54,5 @@ function runTheNumbers()
                 bar.style.backgroundColor = "red";
                 income = Number(income); //convert it to numbers
                 bills = Number(bills);         
-
-                //calculateions
-                var monthly = income/12;
-                var ratio = (bills / monthly) * 100;
-
-                if (ratio < 15)
-                {
-                    result.innerText = "Level 1: Very Low Risk";
-                    bar.style.width = "20%";
-                    bar.style.backgroundColor = "green";
-                }
-                else if (ratio < 30) 
-                {
-                    result.innerText = "Level 2: Low Risk";
-                    bar.style.width = "40%";
-                    bar.style.backgroundColor = "blue";
-                } 
-                else if (ratio < 50) 
-                {
-                    result.innerText = "Level 3: Medium Risk";
-                    bar.style.width = "60%";
-                    bar.style.backgroundColor = "yellow";
-                } 
-                else if (ratio < 75) 
-                {
-                    result.innerText = "Level 4: High Risk";
-                    bar.style.width = "80%";
-                    bar.style.backgroundColor = "orange";
-                } 
-                else 
-                {
-                    result.innerText = "Level 5: Super High Risk";
-                    bar.style.width = "100%";
             }
-        }
         }
